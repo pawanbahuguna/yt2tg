@@ -1,0 +1,19 @@
+name: "Telegram Message Sender"
+description: "A GitHub Action to send messages to Telegram when triggered"
+author: "Pawan Bahuguna"
+branding:
+  icon: "send"
+  color: "blue"
+# inputs:
+#   telegram_token:
+#     description: "Telegram bot token"
+#     required: true
+#   telegram_chat_id:
+#     description: "Telegram chat ID"
+#     required: true
+#   message:
+#     description: "Message to send to Telegram"
+#     required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
