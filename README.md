@@ -17,6 +17,9 @@ This GitHub Action allows you to post YouTube video links to a Telegram channel 
 ### Example Workflow
 
 ```yaml
+permissions:
+  contents: write
+
 name: Post YouTube Video to Telegram
 
 on:
@@ -54,6 +57,9 @@ jobs:
 #### With Manual push
 
 ```yaml
+permissions:
+  contents: write
+
 name: Post YouTube Video to Telegram
 
 on:
