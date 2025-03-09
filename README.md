@@ -40,6 +40,15 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           ALLOW_REPOST: true
+
+      - name: Commit and Push Changes
+        if: always()  # Ensure this step runs even if the previous step fails
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add last_video.txt
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update last_video.txt with latest video ID"
+          git push
 ```
 
 #### With Manual push
@@ -78,6 +87,15 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           ALLOW_REPOST: ${{ inputs.ALLOW_REPOST || false }}
+
+      - name: Commit and Push Changes
+        if: always()  # Ensure this step runs even if the previous step fails
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add last_video.txt
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update last_video.txt with latest video ID"
+          git push
 ```
 
 ### Secrets
