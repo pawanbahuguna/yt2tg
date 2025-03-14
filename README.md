@@ -41,7 +41,7 @@ jobs:
           CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          ALLOW_REPOST: true
+          ALLOW_REPOST: true # optional, defaults to false
 
       - name: Commit and Push Changes
         if: always()  # Ensure this step runs even if the previous step fails
@@ -91,7 +91,7 @@ jobs:
           CHANNEL_ID: ${{ inputs.CHANNEL_ID || secrets.YT_CHANNEL_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          ALLOW_REPOST: ${{ inputs.ALLOW_REPOST || false }}
+          ALLOW_REPOST: ${{ inputs.ALLOW_REPOST || false }} # optional, defaults to false
 
       - name: Commit and Push Changes
         if: always()  # Ensure this step runs even if the previous step fails
