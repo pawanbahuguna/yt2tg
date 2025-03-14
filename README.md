@@ -36,7 +36,7 @@ jobs:
           fetch-depth: 0 
 
       - name: Post YouTube Video to Telegram
-        uses: pawanbahuguna/yt2tg/@v1.0.0
+        uses: pawanbahuguna/yt2tg/@1.0.0
         env:
           CHANNEL_ID: ${{ secrets.YT_CHANNEL_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -86,7 +86,7 @@ jobs:
           fetch-depth: 0 
 
       - name: Post YouTube Video to Telegram
-        uses: pawanbahuguna/yt2tg/@v1.0.0
+        uses: pawanbahuguna/yt2tg/@1.0.0
         env:
           CHANNEL_ID: ${{ inputs.CHANNEL_ID || secrets.YT_CHANNEL_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
