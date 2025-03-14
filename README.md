@@ -23,9 +23,8 @@ permissions:
 name: Post YouTube Video to Telegram
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
 
 jobs:
   post-video:
@@ -63,9 +62,9 @@ permissions:
 name: Post YouTube Video to Telegram
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
+
   workflow_dispatch:  # Allows manual run
     inputs: 
       CHANNEL_ID:
