@@ -65,7 +65,7 @@ on:
   schedule:
     - cron: '0 * * * *' # Runs every hour
 
-  workflow_dispatch:  # Allows manual run
+  workflow_dispatch:  # Allows manual run with custom YouTube ID
     inputs: 
       CHANNEL_ID:
         description: 'YouTube Channel ID'
